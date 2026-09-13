@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuyển dụng | Metfone Express</title>
+<style>
+:root{
+  --red:#e31b23; --dark:#171717; --light:#f7f7f7; --muted:#666;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #eee}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:24px;font-weight:800;color:var(--red)}
+.logo span{color:#222}
+nav{display:flex;gap:28px;font-weight:600}
+nav a:hover{color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;padding:13px 22px;border-radius:8px;font-weight:700;border:0;cursor:pointer}
+.btn:hover{background:#c9141b}
+.hero{background:linear-gradient(135deg,#fff 0%,#fff4f4 55%,#ffe8e8 100%);padding:82px 0}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.badge{display:inline-block;background:#ffe1e3;color:#c4141b;padding:7px 13px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:18px}
+h1{font-size:clamp(38px,5vw,64px);line-height:1.08;margin-bottom:20px}
+h1 strong{color:var(--red)}
+.hero p{font-size:19px;color:#555;max-width:650px;margin-bottom:28px}
+.hero-card{background:#fff;border-radius:20px;padding:32px;box-shadow:0 18px 55px rgba(0,0,0,.1)}
+.hero-card h3{font-size:22px;margin-bottom:18px}
+.stat{display:flex;gap:15px;align-items:flex-start;padding:15px 0;border-bottom:1px solid #eee}
+.stat:last-child{border-bottom:0}
+.icon{width:42px;height:42px;border-radius:10px;background:#fff0f0;display:grid;place-items:center;color:var(--red);font-weight:800}
+section{padding:75px 0}
+.section-title{text-align:center;margin-bottom:42px}
+.section-title h2{font-size:38px;margin-bottom:10px}
+.section-title p{color:var(--muted)}
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.job{border:1px solid #e8e8e8;border-radius:16px;padding:28px;transition:.2s}
+.job:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(0,0,0,.08)}
+.job-tag{color:var(--red);font-weight:700;font-size:14px}
+.job h3{font-size:25px;margin:8px 0 12px}
+.job ul{padding-left:20px;color:#555;margin:16px 0 22px}
+.requirements{background:var(--light)}
+.req-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.req{background:#fff;padding:25px;border-radius:14px}
+.req h3{margin:12px 0 6px}
+.req p{color:#666}
+.apply{background:var(--dark);color:#fff}
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
+.apply h2{font-size:40px;line-height:1.15;margin-bottom:15px}
+.apply p{color:#ccc}
+form{background:#fff;color:#222;padding:28px;border-radius:16px}
+label{display:block;font-weight:700;margin:12px 0 6px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #ddd;border-radius:8px;font:inherit}
+textarea{min-height:110px;resize:vertical}
+form .btn{width:100%;margin-top:18px}
+footer{background:#111;color:#aaa;padding:28px 0;text-align:center;font-size:14px}
+@media(max-width:800px){
+ nav{display:none}.hero-grid,.apply-grid{grid-template-columns:1fr}.jobs,.req-grid{grid-template-columns:1fr}
+ .hero{padding:55px 0}section{padding:55px 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">METFONE <span>EXPRESS</span></div>
+    <nav>
+      <a href="#jobs">Vị trí tuyển dụng</a>
+      <a href="#requirements">Yêu cầu</a>
+      <a href="#apply">Ứng tuyển</a>
+    </nav>
+    <a class="btn" href="#apply">Ứng tuyển ngay</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">CƠ HỘI NGHỀ NGHIỆP</span>
+      <h1>Gia nhập đội ngũ<br><strong>Metfone Express</strong></h1>
+      <p>Chúng tôi đang tìm kiếm những ứng viên năng động, có năng lực quản lý và kinh nghiệm Logistics để cùng phát triển mạng lưới chuyển phát nhanh tại Campuchia.</p>
+      <a class="btn" href="#jobs">Xem vị trí đang tuyển →</a>
+    </div>
+    <div class="hero-card">
+      <h3>Chúng tôi đang tìm kiếm</h3>
+      <div class="stat"><div class="icon">01</div><div><b>Trưởng Bưu cục</b><br><span>Quản lý vận hành và phát triển bưu cục.</span></div></div>
+      <div class="stat"><div class="icon">02</div><div><b>Giám đốc Tỉnh – Express</b><br><span>Phụ trách kinh doanh & vận hành tại địa bàn.</span></div></div>
+      <div class="stat"><div class="icon">✓</div><div><b>Ưu tiên ứng viên</b><br><span>Kinh nghiệm Logistics và giao tiếp tiếng Khmer.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="jobs">
+  <div class="container">
+    <div class="section-title">
+      <h2>Vị trí tuyển dụng</h2>
+      <p>Lựa chọn vị trí phù hợp và gửi thông tin ứng tuyển.</p>
+    </div>
+    <div class="jobs">
+      <article class="job">
+        <span class="job-tag">QUẢN LÝ VẬN HÀNH</span>
+        <h3>Trưởng Bưu cục</h3>
+        <p>Điều hành hoạt động bưu cục, quản lý nhân sự, chất lượng dịch vụ và hiệu quả kinh doanh.</p>
+        <ul>
+          <li>Có kinh nghiệm Logistics/Chuyển phát nhanh</li>
+          <li>Giao tiếp được bằng tiếng Khmer</li>
+          <li>Trình độ 12/12 trở lên</li>
+        </ul>
+        <a class="btn" href="#apply">Ứng tuyển vị trí này</a>
+      </article>
+      <article class="job">
+        <span class="job-tag">KINH DOANH & VẬN HÀNH</span>
+        <h3>Giám đốc Tỉnh – Express</h3>
+        <p>Phát triển thị trường, quản lý hoạt động Express và xây dựng đội ngũ tại tỉnh phụ trách.</p>
+        <ul>
+          <li>Có kinh nghiệm Logistics/kinh doanh</li>
+          <li>Giao tiếp được bằng tiếng Khmer</li>
+          <li>Trình độ 12/12 trở lên</li>
+        </ul>
+        <a class="btn" href="#apply">Ứng tuyển vị trí này</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="requirements" class="requirements">
+  <div class="container">
+    <div class="section-title">
+      <h2>Yêu cầu ứng viên</h2>
+      <p>Những tiêu chí cơ bản để gia nhập đội ngũ.</p>
+    </div>
+    <div class="req-grid">
+      <div class="req"><div class="icon">01</div><h3>Kinh nghiệm</h3><p>Có kinh nghiệm trong lĩnh vực Logistics/Chuyển phát nhanh.</p></div>
+      <div class="req"><div class="icon">02</div><h3>Ngôn ngữ</h3><p>Có khả năng giao tiếp tốt bằng tiếng Khmer.</p></div>
+      <div class="req"><div class="icon">03</div><h3>Trình độ</h3><p>Tốt nghiệp THPT (12/12) trở lên.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="apply">
+  <div class="container apply-grid">
+    <div>
+      <h2>Sẵn sàng cho bước tiến mới?</h2>
+      <p>Hãy để lại thông tin. Bộ phận tuyển dụng Metfone Express sẽ liên hệ với bạn để trao đổi về cơ hội phù hợp.</p>
+      <br>
+      <p><b>Email tuyển dụng:</b> recruitment@metfone.com.kh</p>
+      <p><b>Địa điểm:</b> Cambodia</p>
+    </div>
+    <form onsubmit="submitForm(event)">
+      <h3>Thông tin ứng tuyển</h3>
+      <label>Họ và tên</label>
+      <input required placeholder="Nhập họ và tên">
+      <label>Số điện thoại</label>
+      <input required type="tel" placeholder="Nhập số điện thoại">
+      <label>Vị trí ứng tuyển</label>
+      <select required><option value="">-- Chọn vị trí --</option><option>Trưởng Bưu cục</option><option>Giám đốc Tỉnh – Express</option></select>
+      <label>Kinh nghiệm</label>
+      <textarea placeholder="Mô tả ngắn kinh nghiệm của bạn"></textarea>
+      <button class="btn" type="submit">Gửi hồ sơ ứng tuyển</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 Metfone Express · Recruitment
+</footer>
+
+<script>
+function submitForm(e){
+  e.preventDefault();
+  alert("Cảm ơn bạn! Thông tin ứng tuyển đã được ghi nhận.");
+}
+</script>
+</body>
+</html>
