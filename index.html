@@ -19,6 +19,7 @@ nav{display:flex;gap:28px;font-weight:600}
 nav a:hover{color:var(--red)}
 .btn{display:inline-block;background:var(--red);color:#fff;padding:13px 22px;border-radius:8px;font-weight:700;border:0;cursor:pointer;font-size:15px}
 .btn:hover{background:var(--red2)}
+.job .btn{display:inline-block;visibility:visible;opacity:1}
 .hero{background:linear-gradient(135deg,#fff 0%,#fff4f4 55%,#ffe7e8 100%);padding:82px 0}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
 .badge{display:inline-block;background:#ffe1e3;color:#c4141b;padding:7px 13px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:18px}
@@ -85,12 +86,10 @@ nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-templ
 <div class="container nav">
   <div class="logo">METFONE <span>EXPRESS</span></div>
   <nav>
-    <a href="file:///Users/thaisieng/Downloads/index_metfone_express_cv_google_sheets.html#jobs">Vị trí tuyển dụng</a>
-    <a href="file:///Users/thaisieng/Downloads/index_metfone_express_cv_google_sheets.html#requirements">Yêu cầu</a>
-    <a href="file:///Users/thaisieng/Downloads/index_metfone_express_cv_google_sheets.html#benefits">Phúc lợi</a>
-    <a href="file:///Users/thaisieng/Downloads/index_metfone_express_cv_google_sheets.html#apply">Ứng tuyển</a>
+    <a href="#jobs">Vị trí tuyển dụng</a>
+    <a href="#requirements">Yêu cầu</a>
+    <a href="#benefits">Phúc lợi</a>
   </nav>
-  <a class="btn" href="file:///Users/thaisieng/Downloads/index_metfone_express_cv_google_sheets.html#apply">Ứng tuyển ngay</a>
 </div>
 </header>
 
@@ -101,7 +100,7 @@ nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-templ
     <span class="badge">CƠ HỘI NGHỀ NGHIỆP</span>
     <h1>Gia nhập đội ngũ<br><strong>Metfone Express</strong></h1>
     <p>Metfone Express (Viettel Post Cambodia) tìm kiếm những ứng viên năng động, có năng lực quản lý và kinh nghiệm trong lĩnh vực Logistics để cùng phát triển mạng lưới chuyển phát nhanh tại Campuchia.</p>
-    <a class="btn" href="file:///Users/thaisieng/Downloads/index_metfone_express_cv_google_sheets.html#jobs">Xem vị trí đang tuyển →</a>
+    <a class="btn" href="#jobs">Xem vị trí đang tuyển →</a>
   </div>
   <div class="hero-card">
     <h3>Chúng tôi đang tìm kiếm</h3>
@@ -125,6 +124,7 @@ nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-templ
       <p>Quản lý toàn bộ hoạt động vận hành, kinh doanh, nhân sự và chất lượng dịch vụ tại Bưu cục phụ trách; bảo đảm hoàn thành chỉ tiêu doanh thu, sản lượng và tối ưu hóa chi phí vận hành.</p>
       <div class="job-highlights"><span>📍 Campuchia</span><span>🎓 THPT/CĐ/ĐH</span><span>💼 01–02 năm</span></div>
       <button class="btn" type="button" onclick="openJob(&#39;postmaster&#39;)">Xem mô tả công việc</button>
+    <button class="btn" type="button" onclick="openJob('postmaster')">Xem mô tả công việc</button>
     </article>
 
     <article class="job">
@@ -174,36 +174,6 @@ nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-templ
 </div>
 </div>
 
-<section id="apply" class="apply">
-<div class="container apply-grid">
-  <div>
-    <h2>Sẵn sàng cho bước tiến mới?</h2>
-    <p>Hãy để lại thông tin. Bộ phận tuyển dụng Metfone Express sẽ liên hệ với bạn để trao đổi về cơ hội phù hợp.</p>
-    <br>
-    <p><b>Website: </b>https://mfexpress.metfone.com.kh</p>
-    <p><b>Địa điểm:</b> Cambodia</p>
-  </div>
-  <form id="applicationForm" onsubmit="submitForm(event)">
-    <h3>Thông tin ứng tuyển</h3>
-    <label>Họ và tên</label>
-    <input id="fullName" name="fullName" required="" placeholder="Nhập họ và tên">
-    <label>Số điện thoại</label>
-    <input id="phone" name="phone" required="" type="tel" placeholder="Nhập số điện thoại">
-    <label>Vị trí ứng tuyển</label>
-    <select id="position" name="position" required="">
-      <option value="">-- Chọn vị trí --</option>
-      <option>Trưởng Bưu cục</option><option>Giám đốc Chi nhánh Tỉnh – Express</option>
-    </select>
-    <label>Kinh nghiệm</label>
-    <textarea id="experience" name="experience" placeholder="Mô tả ngắn kinh nghiệm của bạn"></textarea>
-    <label>CV / Hồ sơ ứng tuyển <span style="font-weight:400;opacity:.7">(PDF, DOC, DOCX – tối đa 5MB)</span></label>
-    <input id="cvFile" name="cvFile" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required="">
-    <small style="display:block;margin-top:6px;opacity:.75">Vui lòng tải lên CV để bộ phận tuyển dụng xem xét hồ sơ.</small>
-    <button id="submitBtn" class="btn" type="submit">Gửi hồ sơ ứng tuyển</button>
-    <div id="formStatus" style="margin-top:12px;font-weight:600;"></div>
-  </form>
-</div>
-</section>
 </main>
 
 <footer>© 2026 Metfone Express · Recruitment</footer>
@@ -243,7 +213,7 @@ document.getElementById("jobContent").innerHTML=
 '<div class="modal-meta">'+j.meta.map(x=>'<span>'+x+'</span>').join('')+'</div>'+
 '<p><b>Mục tiêu công việc:</b> '+j.intro+'</p>'+
 j.sections.map(s=>'<h4>'+s[0]+'</h4><ul>'+s[1].map(x=>'<li>'+x+'</li>').join('')+'</ul>').join('')+
-'<div style="margin-top:28px"><a class="btn" href="#apply" onclick="closeJob()">Ứng tuyển vị trí này →</a></div>';
+'';
 document.getElementById("jobModal").classList.add("show");
 document.body.style.overflow="hidden";
 }
@@ -251,75 +221,6 @@ function closeJob(e){
 if(e&&e.target!==document.getElementById("jobModal"))return;
 document.getElementById("jobModal").classList.remove("show");
 document.body.style.overflow="";
-}
-// URL Web App Google Apps Script (kết thúc bằng /exec)
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxcBzJgxNAqffFKrEurCCu5Jh0UiiIzyq3Kkn8IFlNFLbrAl-AHu7pTdzSU4-zWNcdg6A/exec";
-
-async function submitForm(e){
-  e.preventDefault();
-  const status = document.getElementById("formStatus");
-  const btn = document.getElementById("submitBtn");
-  const fileInput = document.getElementById("cvFile");
-  const file = fileInput.files[0];
-
-  if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbxcBzJgxNAqffFKrEurCCu5Jh0UiiIzyq3Kkn8IFlNFLbrAl-AHu7pTdzSU4-zWNcdg6A/exec")) {
-    status.textContent = "Website chưa được kết nối Google Sheets. Hãy dán URL Web App vào GOOGLE_SCRIPT_URL.";
-    return;
-  }
-  if (!file) {
-    status.textContent = "Vui lòng chọn CV trước khi gửi.";
-    return;
-  }
-  const allowed = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-  const extOk = /\.(pdf|doc|docx)$/i.test(file.name);
-  if ((!allowed.includes(file.type) && !extOk) || file.size > 5 * 1024 * 1024) {
-    status.textContent = "CV phải là PDF/DOC/DOCX và dung lượng không quá 5MB.";
-    return;
-  }
-
-  const reader = new FileReader();
-  btn.disabled = true;
-  btn.textContent = "Đang gửi...";
-  status.textContent = "Đang tải CV lên, vui lòng chờ...";
-
-  reader.onload = async function(){
-    try {
-      const base64 = reader.result.split(",")[1];
-      const payload = {
-        fullName: document.getElementById("fullName").value.trim(),
-        phone: document.getElementById("phone").value.trim(),
-        position: document.getElementById("position").value,
-        experience: document.getElementById("experience").value.trim(),
-        cvName: file.name,
-        cvMimeType: file.type || "application/octet-stream",
-        cvBase64: base64,
-        submittedAt: new Date().toISOString(),
-        source: window.location.href
-      };
-
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {"Content-Type": "text/plain;charset=utf-8"},
-        body: JSON.stringify(payload)
-      });
-
-      document.getElementById("applicationForm").reset();
-      status.textContent = "✓ Gửi hồ sơ thành công! CV đã được chuyển đến bộ phận tuyển dụng.";
-    } catch (error) {
-      console.error(error);
-      status.textContent = "Không thể gửi hồ sơ. Vui lòng thử lại.";
-    } finally {
-      btn.disabled = false;
-      btn.textContent = "Gửi hồ sơ ứng tuyển";
-    }
-  };
-  reader.onerror = function(){
-    status.textContent = "Không thể đọc file CV. Vui lòng thử lại.";
-    btn.disabled = false;
-    btn.textContent = "Gửi hồ sơ ứng tuyển";
-  };
-  reader.readAsDataURL(file);
 }
 </script>
 
