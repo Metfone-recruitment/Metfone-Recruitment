@@ -253,7 +253,7 @@ document.getElementById("jobModal").classList.remove("show");
 document.body.style.overflow="";
 }
 // URL Web App Google Apps Script (kết thúc bằng /exec)
-const GOOGLE_SCRIPT_URL = "DAN_URL_WEB_APP_GOOGLE_APPS_SCRIPT_VAO_DAY";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxcBzJgxNAqffFKrEurCCu5Jh0UiiIzyq3Kkn8IFlNFLbrAl-AHu7pTdzSU4-zWNcdg6A/exec";
 
 async function submitForm(e){
   e.preventDefault();
@@ -262,7 +262,7 @@ async function submitForm(e){
   const fileInput = document.getElementById("cvFile");
   const file = fileInput.files[0];
 
-  if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("DAN_URL")) {
+  if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbxcBzJgxNAqffFKrEurCCu5Jh0UiiIzyq3Kkn8IFlNFLbrAl-AHu7pTdzSU4-zWNcdg6A/exec")) {
     status.textContent = "Website chưa được kết nối Google Sheets. Hãy dán URL Web App vào GOOGLE_SCRIPT_URL.";
     return;
   }
