@@ -69,6 +69,21 @@ footer{background:#111;color:#aaa;padding:28px 0;text-align:center;font-size:14p
 nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-template-columns:1fr}
 .hero{padding:55px 0}section{padding:55px 0}.modal{padding:10px}.modal-card{padding:24px 20px}.modal-card h2{font-size:26px}
 }
+
+.apply-wrap{margin-top:28px;padding-top:28px;border-top:1px solid #eee}
+.apply-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.form-group{display:flex;flex-direction:column;gap:7px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-weight:700;font-size:14px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 13px;border:1px solid #ddd;border-radius:8px;font:inherit;background:#fff}
+.form-group textarea{min-height:110px;resize:vertical}
+.form-note{font-size:13px;color:#666;margin-top:6px}
+.apply-actions{display:flex;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}
+.form-status{font-size:14px;font-weight:600}
+.form-status.success{color:#16803c}.form-status.error{color:#c4141b}
+.required{color:var(--red)}
+@media(max-width:800px){.apply-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}}
+
 </style>
 </head>
 <body style="">
@@ -81,6 +96,7 @@ nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-templ
     <a href="#requirements">Yêu cầu</a>
     <a href="#benefits">Phúc lợi</a>
     <a href="#contact">Liên hệ</a>
+    <a href="#apply">Ứng tuyển</a>
   </nav>
 </div>
 </header>
@@ -116,6 +132,7 @@ nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-templ
       <p>Quản lý toàn bộ hoạt động vận hành, kinh doanh, nhân sự và chất lượng dịch vụ tại Bưu cục phụ trách; bảo đảm hoàn thành chỉ tiêu doanh thu, sản lượng và tối ưu hóa chi phí vận hành.</p>
       <div class="job-highlights"><span>📍 Campuchia</span><span>🎓 THPT/CĐ/ĐH</span><span>💼 01–02 năm</span></div>
       <button class="btn" type="button" onclick="openJob(&#39;postmaster&#39;)">Xem mô tả công việc</button>
+       <a class="btn" href="#apply" style="margin-left:8px;margin-top:8px">Ứng tuyển ngay</a>
     </article>
 
     <article class="job">
@@ -124,6 +141,7 @@ nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-templ
       <p>Chịu trách nhiệm toàn diện trước Ban Giám đốc Công ty về chiến lược kinh doanh, mạng lưới vận hành, hiệu quả tài chính và quản trị nhân sự trên địa bàn được giao.</p>
       <div class="job-highlights"><span>📍 Campuchia</span><span>🎓 THPT/CĐ/ĐH</span><span>💼 01-02 năm</span></div>
       <button class="btn" type="button" onclick="openJob(&#39;director&#39;)">Xem mô tả công việc</button>
+       <a class="btn" href="#apply" style="margin-left:8px;margin-top:8px">Ứng tuyển ngay</a>
     </article>
   </div>
 </div>
@@ -164,6 +182,63 @@ nav{display:none}.hero-grid,.apply-grid,.jobs,.benefit-grid,.req-grid{grid-templ
   <div id="jobContent"></div>
 </div>
 </div>
+
+
+<section id="apply" class="benefits" style="background:#fff4f4">
+  <div class="container">
+    <div class="section-title">
+      <h2>Đăng ký ứng tuyển</h2>
+      <p>Điền thông tin và tải CV để gửi hồ sơ trực tuyến.</p>
+    </div>
+
+    <div class="hero-card">
+      <form id="applicationForm">
+        <div class="apply-grid">
+          <div class="form-group">
+            <label>Họ và tên <span class="required">*</span></label>
+            <input type="text" name="fullName" required maxlength="120" placeholder="Nhập họ và tên">
+          </div>
+
+          <div class="form-group">
+            <label>Số điện thoại <span class="required">*</span></label>
+            <input type="tel" name="phone" required maxlength="30" placeholder="Nhập số điện thoại">
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" maxlength="150" placeholder="example@email.com">
+          </div>
+
+          <div class="form-group">
+            <label>Vị trí ứng tuyển <span class="required">*</span></label>
+            <select name="position" required>
+              <option value="">-- Chọn vị trí --</option>
+              <option value="Trưởng Bưu cục">Trưởng Bưu cục</option>
+              <option value="Giám đốc Chi nhánh Tỉnh">Giám đốc Chi nhánh Tỉnh</option>
+            </select>
+          </div>
+
+
+          <div class="form-group full">
+            <label>Giới thiệu ngắn</label>
+            <textarea name="message" maxlength="1000" placeholder="Thông tin thêm về kinh nghiệm hoặc mong muốn của bạn"></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label>CV <span class="required">*</span></label>
+            <input id="cvFile" type="file" name="cv" required accept=".pdf,.doc,.docx">
+            <div class="form-note">Chấp nhận PDF, DOC, DOCX. Dung lượng tối đa 10 MB.</div>
+          </div>
+        </div>
+
+        <div class="apply-actions">
+          <button id="submitApplication" class="btn" type="submit">Gửi hồ sơ ứng tuyển</button>
+          <span id="formStatus" class="form-status"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
 </main>
 
@@ -240,6 +315,105 @@ if(e&&e.target!==document.getElementById("jobModal"))return;
 document.getElementById("jobModal").classList.remove("show");
 document.body.style.overflow="";
 }
+
+// =============================
+// CẤU HÌNH GOOGLE APPS SCRIPT
+// Dán URL Web App của Google Apps Script vào đây.
+// Ví dụ: https://script.google.com/macros/s/XXXXXXXX/exec
+// =============================
+const GOOGLE_APPS_SCRIPT_URL = "DAN_URL_GOOGLE_APPS_SCRIPT_VAO_DAY";
+
+const applicationForm = document.getElementById("applicationForm");
+const cvFileInput = document.getElementById("cvFile");
+const submitApplicationBtn = document.getElementById("submitApplication");
+const formStatus = document.getElementById("formStatus");
+
+applicationForm.addEventListener("submit", async function(event){
+  event.preventDefault();
+
+  const file = cvFileInput.files[0];
+  if(!file){
+    formStatus.className = "form-status error";
+    formStatus.textContent = "Vui lòng chọn CV.";
+    return;
+  }
+
+  if(file.size > 10 * 1024 * 1024){
+    formStatus.className = "form-status error";
+    formStatus.textContent = "CV vượt quá 10 MB. Vui lòng chọn file nhỏ hơn.";
+    return;
+  }
+
+  const allowedTypes = [
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  ];
+  const allowedExt = /\.(pdf|doc|docx)$/i;
+  if(!allowedExt.test(file.name) && !allowedTypes.includes(file.type)){
+    formStatus.className = "form-status error";
+    formStatus.textContent = "Chỉ nhận file PDF, DOC hoặc DOCX.";
+    return;
+  }
+
+  if(GOOGLE_APPS_SCRIPT_URL.includes("DAN_URL")){
+    formStatus.className = "form-status error";
+    formStatus.textContent = "Website chưa được cấu hình Google Apps Script.";
+    return;
+  }
+
+  submitApplicationBtn.disabled = true;
+  submitApplicationBtn.textContent = "Đang gửi hồ sơ...";
+  formStatus.className = "form-status";
+  formStatus.textContent = "Đang tải CV lên, vui lòng chờ...";
+
+  try{
+    const base64 = await fileToBase64(file);
+    const data = {
+      fullName: applicationForm.fullName.value.trim(),
+      phone: applicationForm.phone.value.trim(),
+      email: applicationForm.email.value.trim(),
+      position: applicationForm.position.value,
+      message: applicationForm.message.value.trim(),
+      cvName: file.name,
+      cvMimeType: file.type || "application/octet-stream",
+      cvBase64: base64
+    };
+
+    // no-cors is used because Google Apps Script Web Apps may not return
+    // normal CORS headers. The server still receives and processes the request.
+    await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {"Content-Type":"text/plain;charset=utf-8"},
+      body: JSON.stringify(data)
+    });
+
+    formStatus.className = "form-status success";
+    formStatus.textContent = "Đã gửi hồ sơ. Cảm ơn bạn đã ứng tuyển Metfone Express!";
+    applicationForm.reset();
+  }catch(error){
+    console.error(error);
+    formStatus.className = "form-status error";
+    formStatus.textContent = "Không thể gửi hồ sơ. Vui lòng thử lại hoặc liên hệ trực tiếp.";
+  }finally{
+    submitApplicationBtn.disabled = false;
+    submitApplicationBtn.textContent = "Gửi hồ sơ ứng tuyển";
+  }
+});
+
+function fileToBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = String(reader.result || "");
+      resolve(result.includes(",") ? result.split(",")[1] : result);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
 </script>
 
 </body></html>
